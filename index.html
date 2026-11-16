@@ -12,10 +12,10 @@
   <title>엘리프 마곡 가든스퀘어 | 마곡 지식산업센터 분양 임대 상담 · 즉시입주</title>
 
   <!-- 설명: 80자 내외, 행동유도 문구 포함 -->
-  <meta name="description" content="마곡일반산업단지 D18-B블록 7.5만㎡ 프리미엄 지식산업센터 엘리프 마곡 가든스퀘어. 9호선 양천향교역 트리플 역세권, 계룡건설 시공, 준공완료 즉시입주! 분양·임대 VIP 방문예약 ☎010-4870-0646">
+  <meta name="description" content="마곡 D18-B블록 프리미엄 지식산업센터 엘리프 마곡 가든스퀘어. [특보] 전 호실 임대분양(4층·10층 일부 제외) & 12월 산집법 시행령 개정으로 제한업종 외 모든 업종 전면 수용! 9호선 양천향교역 역세권 즉시입주 상담 ☎010-4870-0646">
 
   <!-- 네이버 검색 키워드: 세부 롱테일 키워드 포함 -->
-  <meta name="keywords" content="엘리프 마곡 가든스퀘어, 마곡 지식산업센터, 마곡 지식산업센터 분양, 마곡 지식산업센터 임대, 마곡 엘리프, 마곡 가든스퀘어, 계룡건설 엘리프, 양천향교역 지식산업센터, 마곡 오피스 분양, 마곡 연구소 임대, 마곡 상가 분양, 마곡 D18-B, 마곡 사옥 임대, 강서구 지식산업센터, 마곡동 오피스 분양, 마곡 즉시입주">
+  <meta name="keywords" content="엘리프 마곡 가든스퀘어, 마곡 지식산업센터, 마곡 임대분양, 산집법 시행령 개정, 마곡 지식산업센터 입주업종, 마곡 지식산업센터 분양, 마곡 지식산업센터 임대, 마곡 엘리프, 마곡 가든스퀘어, 양천향교역 지식산업센터, 마곡 오피스 임대, 마곡 D18-B, 마곡 즉시입주">
   <meta name="author" content="엘리프 마곡 가든스퀘어 분양홍보관">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://elif-magok.co.kr/">
@@ -124,6 +124,22 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "지식산업센터 취득세 50% 감면, 재산세 37.5% 감면, 법인세 감면 등 다양한 세제혜택이 적용됩니다. 중소기업 저리 대출(최대 80%)도 지원됩니다. 자세한 사항은 상담사를 통해 확인하세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "엘리프 마곡 가든스퀘어 임대분양도 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 4층과 10층 일부호실을 제외한 전 호실에 대해 임대분양이 가능합니다. 초기 자금 부담을 대폭 낮추어 합리적인 비용으로 원하는 사옥을 선점하실 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "산집법 시행령 개정으로 어떤 업종이 입주할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "12월 산업집적활성화 및 공장설립에 관한 법률(산집법) 시행령 개정으로 유해업종 등 일부 제한업종을 제외한 모든 업종의 입주가 전면 수용됩니다. IT, 정보통신, 금융, 경영컨설팅, 연구개발 등 폭넓은 기업의 입주가 가능합니다."
             }
           }
         ]
@@ -512,10 +528,289 @@
       pointer-events: none;
     }
 
+    .hero-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 860px;
+      flex: 1 1 660px;
+      max-width: 760px;
+    }
+
+    /* =====================================================
+       Hero Right Special Notice (우측 상단 핵심 공지 카드)
+       - 전 호실 임대분양 (4층, 10층 일부호실 제외)
+       - 12월 산집법 시행령 개정으로 제한업종 외 모든 업종 전면 수용
+       ===================================================== */
+    .hero-right-notice {
+      flex: 0 0 420px;
+      width: 420px;
+      background: linear-gradient(155deg, rgba(14, 26, 56, 0.95) 0%, rgba(6, 11, 26, 0.98) 100%);
+      border: 2px solid rgba(212, 175, 55, 0.8);
+      border-radius: 20px;
+      padding: 24px 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 
+                  0 0 35px rgba(197, 160, 89, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: relative;
+      z-index: 5;
+      animation: heroNoticeGlow 3.5s infinite ease-in-out;
+      margin-top: 4px;
+    }
+
+    @keyframes heroNoticeGlow {
+      0%, 100% {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(197, 160, 89, 0.25);
+        border-color: rgba(212, 175, 55, 0.75);
+      }
+      50% {
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 42px rgba(212, 175, 55, 0.55);
+        border-color: rgba(255, 224, 130, 0.98);
+      }
+    }
+
+    .notice-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    }
+
+    .notice-live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      background: rgba(220, 38, 38, 0.22);
+      border: 1px solid rgba(239, 68, 68, 0.65);
+      border-radius: 9999px;
+      color: #FFC0C0;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .notice-live-pill .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #EF4444;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #EF4444;
+      animation: livePulse 1.5s infinite;
+    }
+
+    @keyframes livePulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.35); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .notice-edition-tag {
+      font-size: 0.76rem;
+      color: var(--gold-light);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .notice-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .notice-block {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(197, 160, 89, 0.28);
+      border-radius: 14px;
+      padding: 16px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .notice-block:hover {
+      background: rgba(197, 160, 89, 0.1);
+      border-color: rgba(212, 175, 55, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .notice-block-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0A1128;
+      background: var(--gold-gradient);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .notice-block-tag.law-tag {
+      background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+      color: #0A1128;
+    }
+
+    .notice-main-text {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      word-break: keep-all;
+    }
+
+    .gold-highlight {
+      background: linear-gradient(135deg, #FFF6D8 0%, #D4AF37 50%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    .notice-sub-exception {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #FFE082;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px dashed rgba(212, 175, 55, 0.55);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    .notice-desc-line {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+
+    .notice-inner-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .notice-inner-divider .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.45), transparent);
+    }
+
+    .notice-inner-divider .divider-text {
+      font-size: 0.68rem;
+      color: var(--gold-light);
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+
+    .notice-law-prefix {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .notice-law-accent {
+      font-size: 1.42rem;
+      font-weight: 900;
+      line-height: 1.3;
+      word-break: keep-all;
+      letter-spacing: -0.02em;
+    }
+
+    .notice-law-accent .text-bright {
+      color: #FFFFFF;
+    }
+
+    .notice-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .notice-mini-chip {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 4px;
+      color: #E2E8F0;
+    }
+
+    .notice-action-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: var(--gold-gradient);
+      color: #0A1128 !important;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+    }
+
+    .notice-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(197, 160, 89, 0.55);
+      filter: brightness(1.06);
+    }
+
+    .notice-action-btn i.fa-phone-volume {
+      font-size: 1.3rem;
+      color: #0A1128;
+    }
+
+    .btn-text-wrap {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: left;
+    }
+
+    .btn-sub-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: #3B2A08;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-main-phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0A1128;
+      line-height: 1.2;
+    }
+
+    .btn-arrow {
+      font-size: 0.9rem;
+      color: #0A1128;
+      opacity: 0.7;
     }
 
     .hero-tag {
@@ -1714,6 +2009,21 @@
       .container {
         padding: 0 20px;
       }
+      .hero-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 36px;
+      }
+      .hero-content {
+        max-width: 100%;
+        flex: none;
+      }
+      .hero-right-notice {
+        width: 100%;
+        max-width: 640px;
+        flex: none;
+        margin: 0 auto;
+      }
       .section-header {
         margin-bottom: 44px;
       }
@@ -2033,6 +2343,28 @@
         padding: 0 14px;
       }
 
+      /* Hero Right Notice Mobile */
+      .hero-right-notice {
+        padding: 18px 15px;
+        border-radius: 16px;
+      }
+      .notice-main-text {
+        font-size: 1.35rem;
+      }
+      .notice-sub-exception {
+        font-size: 0.82rem;
+        padding: 3px 8px;
+      }
+      .notice-law-accent {
+        font-size: 1.22rem;
+      }
+      .notice-law-prefix {
+        font-size: 0.85rem;
+      }
+      .btn-main-phone {
+        font-size: 1.05rem;
+      }
+
       /* Hero */
       .hero-main-title {
         font-size: clamp(1.55rem, 7vw, 2rem);
@@ -2284,7 +2616,7 @@
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
     <div class="hero-particles"></div>
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-content">
         <div class="hero-tag">
           <i class="fa-solid fa-gem"></i>
@@ -2342,6 +2674,77 @@
           </a>
         </div>
       </div>
+
+      <!-- Hero Right-Top Special Announcement Notice Card -->
+      <aside class="hero-right-notice" aria-label="특별 공급 및 입주 안내">
+        <div class="notice-header-bar">
+          <div class="notice-live-pill">
+            <span class="pulse-dot"></span>
+            <span>긴급 분양·입주 특보</span>
+          </div>
+          <span class="notice-edition-tag">2026 최신 개정 수혜</span>
+        </div>
+
+        <div class="notice-card-content">
+          <!-- Item 1: 전 호실 임대분양 -->
+          <div class="notice-block rent-sale-block">
+            <div class="notice-block-tag">
+              <i class="fa-solid fa-building-circle-check"></i> 특별 공급 전환
+            </div>
+            <div class="notice-main-text">
+              <span class="gold-highlight">전 호실 임대분양</span>
+            </div>
+            <div class="notice-sub-exception">
+              <i class="fa-solid fa-circle-exclamation"></i> (4층, 10층 일부호실 제외)
+            </div>
+            <p class="notice-desc-line">
+              분양 자금 부담을 최소화하는 파격적 임대 전환! 선착순 로얄호실 선점 가능
+            </p>
+          </div>
+
+          <!-- Divider -->
+          <div class="notice-inner-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text"><i class="fa-solid fa-star"></i> SPECIAL BENEFIT <i class="fa-solid fa-star"></i></span>
+            <span class="divider-line"></span>
+          </div>
+
+          <!-- Item 2: 산집법 시행령 개정 -->
+          <div class="notice-block law-block">
+            <div class="notice-block-tag law-tag">
+              <i class="fa-solid fa-scale-balanced"></i> 산업집적법 규제 대폭 완화
+            </div>
+            <div class="notice-law-prefix">
+              12월 산집법 시행령 개정으로
+            </div>
+            <div class="notice-law-accent">
+              <span class="text-bright">제한업종 외 모든 업종</span> <br>
+              <span class="gold-highlight">전면 수용</span>
+            </div>
+            <div class="notice-chips-row">
+              <span class="notice-mini-chip">IT·소프트웨어</span>
+              <span class="notice-mini-chip">정보통신</span>
+              <span class="notice-mini-chip">경영컨설팅</span>
+              <span class="notice-mini-chip">금융·보험</span>
+              <span class="notice-mini-chip">연구개발</span>
+              <span class="notice-mini-chip">전문서비스</span>
+            </div>
+            <p class="notice-desc-line">
+              네거티브 규제 전면 도입으로 대다수 일반 기업의 자유로운 입주 승인 지원!
+            </p>
+          </div>
+
+          <!-- Bottom Action Call -->
+          <a href="tel:010-4870-0646" class="notice-action-btn">
+            <i class="fa-solid fa-phone-volume"></i>
+            <div class="btn-text-wrap">
+              <span class="btn-sub-label">임대분양 잔여호실 & 입주업종 심사 문의</span>
+              <span class="btn-main-phone">010-4870-0646</span>
+            </div>
+            <i class="fa-solid fa-chevron-right btn-arrow"></i>
+          </a>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -2932,6 +3335,22 @@
           <div class="benefit-name">부가세 100% 환급</div>
           <div class="benefit-desc">
             사업자등록증 보유 기업 대상 건물분에 대한 부가가치세 전액 조기 환급 가능 (기업 실사 안내)
+          </div>
+        </div>
+
+        <div class="benefit-box" style="border-color: rgba(212, 175, 55, 0.45); background: rgba(197, 160, 89, 0.08);">
+          <div class="benefit-icon" style="background: var(--gold-gradient); color: #0A1128;"><i class="fa-solid fa-building-circle-check"></i></div>
+          <div class="benefit-name" style="color: #FFE082;">전 호실 임대분양 특혜</div>
+          <div class="benefit-desc">
+            <strong>(4층, 10층 일부호실 제외)</strong> 전 호실 임대분양 전격 시행! 사옥 매입 초기 자금 부담 없이 원하는 로얄호실을 임대로 즉시 입주 가능합니다.
+          </div>
+        </div>
+
+        <div class="benefit-box" style="border-color: rgba(56, 189, 248, 0.45); background: rgba(56, 189, 248, 0.06);">
+          <div class="benefit-icon" style="background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #0A1128;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div class="benefit-name" style="color: #BAE6FD;">12월 산집법 시행령 개정</div>
+          <div class="benefit-desc">
+            산업집적법 규제 완화로 <strong>제한업종 외 모든 업종 전면 수용!</strong> IT, 정보통신, 경영컨설팅, 금융, 연구개발 등 다양한 기업 입주를 보장합니다.
           </div>
         </div>
       </div>
