@@ -2560,6 +2560,44 @@
 @media(max-width:900px){.benefits-layout{grid-template-columns:1fr}.benefits-image{position:static;max-height:420px;object-fit:cover}}
 @media(max-width:600px){.benefits-layout .benefit-box{grid-template-columns:34px 1fr;gap:8px 10px}.benefits-layout .benefit-desc{grid-column:2}.benefits-layout .benefit-name{font-size:.95rem}}
 </style>
+<script>document.documentElement.dataset.page = new URLSearchParams(location.search).get('page') || 'home';</script>
+<style>
+/* Desktop menu destinations have their own shareable URLs. */
+@media (min-width:901px) {
+ html[data-page] body > section {display:none}
+ html[data-page="home"] body > #hero, html[data-page="home"] body > .metrics-strip,
+ html[data-page="overview"] body > #overview, html[data-page="premium"] body > #premium,
+ html[data-page="location"] body > #location, html[data-page="facility"] body > #facility,
+ html[data-page="benefit"] body > #benefit, html[data-page="contact"] body > #contact {display:block}
+ html[data-page="home"] body > #hero {display:flex}
+ html:not([data-page="home"]) body > section {min-height:calc(100vh - 200px);padding-top:130px}
+}
+.nav-link.is-current {color:var(--gold-light)}
+.nav-link.is-current::after {width:100%}
+.hero-right-notice {background:linear-gradient(135deg,#f13c4d,#be1429);border:2px solid #ff838b;border-radius:12px;box-shadow:0 8px 30px #0007;animation:none;overflow:hidden}
+.hero-right-notice .notice-block {background:transparent;border:0;border-radius:0;text-align:center;box-shadow:none}
+.hero-right-notice .notice-block + .notice-block {border-top:1px solid #ffffff70}
+.hero-right-notice .notice-block-tag, .hero-right-notice .law-tag {background:transparent;color:#fff;border:0}
+.hero-right-notice .notice-main-text {background:linear-gradient(#fff,#e2e5e9);border-radius:6px;padding:8px 4px;box-shadow:0 4px 0 #adb3ba,0 8px 14px #71071899}
+.hero-right-notice .notice-main-text .gold-highlight {color:#a40f1d;background:none;-webkit-text-fill-color:#a40f1d}
+.hero-right-notice .notice-sub-exception,.hero-right-notice .notice-law-prefix,.hero-right-notice .notice-law-accent,.hero-right-notice .notice-law-accent .gold-highlight,.hero-right-notice .notice-law-accent .text-bright {color:#fff}
+@media(max-width:900px) {
+ .navbar,.navbar.scrolled {height:70px}
+ .nav-menu,.nav-menu.active {display:flex;position:fixed;top:70px;left:0;width:100%;height:48px;max-height:none;flex-direction:row;align-items:stretch;justify-content:flex-start;gap:0;padding:0 8px;overflow-x:auto;overflow-y:hidden;transform:none;opacity:1;visibility:visible;background:#0a1128;box-shadow:0 6px 15px #0005;border-bottom:1px solid #c5a059;scrollbar-width:none}
+ .nav-menu::-webkit-scrollbar {display:none}
+ .nav-menu .nav-link {flex:0 0 auto;width:auto;padding:13px 12px;font-size:.9rem;border:0;white-space:nowrap}
+ .nav-menu .nav-link.is-current {color:#f7d68e;box-shadow:inset 0 -3px #e4bd6d}
+ .mobile-menu-btn {display:none}
+ body > section[id] {scroll-margin-top:118px}
+ .hero-section {padding-top:142px}
+}
+@media(max-width:768px) {
+ body {padding-bottom:0}
+ .mobile-bottom-bar {display:none}
+ .floating-bar {bottom:18px}
+ .hero-section {padding-top:142px}
+}
+</style>
 </head>
 <body>
 
@@ -3539,5 +3577,32 @@
       document.getElementById('visitDate').setAttribute('min', today);
     } catch(e) {}
   </script>
+<script>
+(function () {
+ const ids=['overview','premium','location','facility','benefit','contact'];
+ const links=[...document.querySelectorAll('.nav-link')];
+ const narrow=window.matchMedia('(max-width: 900px)');
+ function activate(id) {
+   links.forEach(link=>{const active=link.dataset.section===id;link.classList.toggle('is-current',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+ }
+ function updateLinks() {
+   document.querySelectorAll('a[href^="#"]').forEach(a=>{const id=a.dataset.originalSection || a.getAttribute('href').slice(1); if(!ids.includes(id)&&id!=='hero')return; a.dataset.originalSection=id; if(a.classList.contains('nav-link'))a.dataset.section=id; a.href=narrow.matches?'#'+id:(id==='hero'?'./':'?page='+id);});
+   document.querySelectorAll('a[data-original-section]').forEach(a=>{const id=a.dataset.originalSection;a.href=narrow.matches?'#'+id:(id==='hero'?'./':'?page='+id)});
+   updateActive();
+ }
+ function updateActive() {
+   if(!narrow.matches){activate(document.documentElement.dataset.page);return}
+   let current=''; const threshold=130;
+   ids.forEach(id=>{const el=document.getElementById(id);if(el && el.getBoundingClientRect().top<=threshold)current=id});
+   activate(current);
+   const active=document.querySelector('.nav-link.is-current');
+   if(active){const nav=active.parentElement; const left=active.offsetLeft; if(left<nav.scrollLeft || left+active.offsetWidth>nav.scrollLeft+nav.clientWidth)nav.scrollTo({left:left-nav.clientWidth/2+active.offsetWidth/2,behavior:'smooth'});}
+ }
+ window.addEventListener('scroll',updateActive,{passive:true});
+ narrow.addEventListener('change',updateLinks);
+ updateLinks();
+ if(narrow.matches && ids.includes(document.documentElement.dataset.page) && !location.hash) requestAnimationFrame(()=>document.getElementById(document.documentElement.dataset.page).scrollIntoView());
+})();
+</script>
 </body>
 </html>
