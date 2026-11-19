@@ -496,7 +496,7 @@
     /* =====================================================
        Hero Right Special Notice (우측 상단 핵심 공지 카드)
        - 전 호실 임대분양 (4층, 10층 일부호실 제외)
-       - 12월 산집법 시행령 개정으로 제한업종 외 모든 업종 전면 수용
+       - 26년 12월 산집법 시행령 개정으로 제한업종 외 모든 업종 전면 수용
        ===================================================== */
     .hero-right-notice {
       flex: 0 0 320px;
@@ -2560,18 +2560,8 @@
 @media(max-width:900px){.benefits-layout{grid-template-columns:1fr}.benefits-image{position:static;max-height:420px;object-fit:cover}}
 @media(max-width:600px){.benefits-layout .benefit-box{grid-template-columns:34px 1fr;gap:8px 10px}.benefits-layout .benefit-desc{grid-column:2}.benefits-layout .benefit-name{font-size:.95rem}}
 </style>
-<script>document.documentElement.dataset.page = new URLSearchParams(location.search).get('page') || 'home';</script>
 <style>
-/* Desktop menu destinations have their own shareable URLs. */
-@media (min-width:901px) {
- html[data-page] body > section {display:none}
- html[data-page="home"] body > #hero, html[data-page="home"] body > .metrics-strip,
- html[data-page="overview"] body > #overview, html[data-page="premium"] body > #premium,
- html[data-page="location"] body > #location, html[data-page="facility"] body > #facility,
- html[data-page="benefit"] body > #benefit, html[data-page="contact"] body > #contact {display:block}
- html[data-page="home"] body > #hero {display:flex}
- html:not([data-page="home"]) body > section {min-height:calc(100vh - 200px);padding-top:130px}
-}
+
 .nav-link.is-current {color:var(--gold-light)}
 .nav-link.is-current::after {width:100%}
 .hero-right-notice {background:linear-gradient(135deg,#f13c4d,#be1429);border:2px solid #ff838b;border-radius:12px;box-shadow:0 8px 30px #0007;animation:none;overflow:hidden}
@@ -2603,6 +2593,30 @@
 .hero-right-notice .notice-law-box {background:linear-gradient(#fff,#e2e5e9);border-radius:6px;padding:9px 5px;box-shadow:0 4px 0 #adb3ba,0 8px 14px #71071899}
 .hero-right-notice .notice-law-box .notice-law-prefix,.hero-right-notice .notice-law-box .notice-law-accent,.hero-right-notice .notice-law-box .text-bright,.hero-right-notice .notice-law-box .gold-highlight {color:#a40f1d;background:none;-webkit-text-fill-color:#a40f1d}
 </style>
+<style id="reference-notice-style">
+.hero-right-notice{position:relative;isolation:isolate;overflow:hidden;flex:0 0 300px;width:300px;max-width:300px;padding:16px 20px;background:linear-gradient(135deg,#f13c4d,#d31831);border:2px solid #ff838b;border-radius:12px;color:#fff;animation:reference-glow 3.2s ease-in-out infinite;backdrop-filter:none;-webkit-backdrop-filter:none}
+.hero-right-notice::before{content:"";position:absolute;pointer-events:none;z-index:0;inset:-50% auto -50% -45%;width:48%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14) 24%,rgba(255,255,255,.46) 50%,rgba(255,255,255,.14) 76%,transparent);transform:translateX(-150%) skewX(-20deg);animation:reference-sheen 3.2s ease-in-out infinite}
+.hero-right-notice .notice-card-content{position:relative;z-index:1;display:block}
+.hero-right-notice .notice-block,.hero-right-notice .notice-block:hover{padding:12px 0;background:transparent;border:0;border-radius:0;box-shadow:none;text-align:center;transform:none}
+.hero-right-notice .notice-block+.notice-block{border-top:1px solid #ffffff50}
+.hero-right-notice .notice-main-text{display:block;margin:0 0 12px;padding:10px 4px;background:linear-gradient(180deg,#fff 0%,#fff 35%,#e2e5e9 100%);border:1px solid #fff;border-radius:6px;box-shadow:inset 0 2px 1px #fff,inset 0 -2px 2px #c5cad0,0 4px 0 #adb3ba,0 8px 14px #71071899;text-align:center;font-size:clamp(20px,1.7vw,24px);line-height:1.25;letter-spacing:-.065em}
+.hero-right-notice .notice-main-text .gold-highlight{color:#a40f1d;background:none;-webkit-text-fill-color:#a40f1d}
+.hero-right-notice .notice-sub-exception{display:block;padding:0;margin:0;background:none;border:0;color:#fff;font-size:.9rem}
+.hero-right-notice .notice-law-box{padding:0;background:transparent;box-shadow:none;border:0;border-radius:0}
+.hero-right-notice .notice-law-box .notice-law-prefix{margin:0 0 6px;color:#fff;-webkit-text-fill-color:#fff;font-size:1rem;line-height:1.6}
+.hero-right-notice .notice-law-box .notice-law-accent,.hero-right-notice .notice-law-box .notice-law-accent .text-bright,.hero-right-notice .notice-law-box .notice-law-accent .gold-highlight{color:#fff;background:none;-webkit-text-fill-color:#fff;font-size:1.1rem;line-height:1.5}
+@keyframes reference-glow{0%,100%{box-shadow:0 10px 36px rgba(130,22,36,.27),0 0 0 0 rgba(255,95,105,0);border-color:#ff838b}42%{box-shadow:0 12px 42px rgba(130,22,36,.4),0 0 24px 5px rgba(255,95,105,.4);border-color:#ffc2c6}}
+@keyframes reference-sheen{0%,5%{transform:translateX(-150%) skewX(-20deg);opacity:0}14%{opacity:1}57%{transform:translateX(480%) skewX(-20deg);opacity:1}65%,100%{transform:translateX(480%) skewX(-20deg);opacity:0}}
+@media(max-width:1100px){.hero-right-notice{flex:0 0 auto;width:min(100%,300px);max-width:300px}}
+@media(prefers-reduced-motion:reduce){.hero-right-notice,.hero-right-notice::before{animation:none}.hero-right-notice::before{display:none}}
+</style>
+<style id="law-notice-white-box">
+.hero-right-notice .notice-law-box{display:block;padding:10px 6px;background:linear-gradient(180deg,#fff 0%,#fff 35%,#e2e5e9 100%);border:1px solid #fff;border-radius:6px;box-shadow:inset 0 2px 1px #fff,inset 0 -2px 2px #c5cad0,0 4px 0 #adb3ba,0 8px 14px #71071899}
+.hero-right-notice .notice-law-box .notice-law-prefix,.hero-right-notice .notice-law-box .notice-law-accent,.hero-right-notice .notice-law-box .notice-law-accent .text-bright,.hero-right-notice .notice-law-box .notice-law-accent .gold-highlight{color:#a40f1d;background:none;-webkit-text-fill-color:#a40f1d}
+@media(min-width:901px){.navbar,.navbar.scrolled{position:fixed;top:0;left:0;right:0;z-index:1000}}
+</style>
+<style>body > section[id]{scroll-margin-top:90px}@media(max-width:900px){body > section[id]{scroll-margin-top:118px}}</style>
+<style>.hero-right-notice .notice-law-box .notice-law-prefix{font-weight:700}</style>
 </head>
 <body>
 
@@ -2660,9 +2674,6 @@
         <div class="notice-card-content">
           <!-- Item 1: 전 호실 임대분양 -->
           <div class="notice-block rent-sale-block">
-            <div class="notice-block-tag">
-              <i class="fa-solid fa-building-circle-check"></i> 특별 공급 전환
-            </div>
             <div class="notice-main-text">
               <span class="gold-highlight">전 호실 임대분양</span>
             </div>
@@ -2673,11 +2684,8 @@
 
           <!-- Item 2: 산집법 시행령 개정 -->
           <div class="notice-block law-block">
-            <div class="notice-block-tag law-tag">
-              <i class="fa-solid fa-scale-balanced"></i> 산업집적법 규제 대폭 완화
-            </div>
             <div class="notice-law-box"><div class="notice-law-prefix">
-              12월 산집법 시행령 개정으로
+              26년 12월 산집법 시행령 개정으로
             </div>
             <div class="notice-law-accent">
               <span class="text-bright">제한업종 외 모든 업종</span> <br>
@@ -3081,7 +3089,7 @@
 
         <div class="benefit-box" style="border-color: rgba(56, 189, 248, 0.45);">
           <div class="benefit-icon" style="background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #0A1128;"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="benefit-name" style="color: #BAE6FD;">12월 산집법 시행령 개정</div>
+          <div class="benefit-name" style="color: #BAE6FD;">26년 12월 산집법 시행령 개정</div>
           <div class="benefit-desc">
             산업집적법 규제 완화로 <strong>제한업종 외 모든 업종 전면 수용!</strong> IT, 정보통신, 경영컨설팅, 금융, 연구개발 등 다양한 기업 입주를 보장합니다.
           </div>
@@ -3583,30 +3591,18 @@
     } catch(e) {}
   </script>
 <script>
-(function () {
+(function(){
  const ids=['overview','premium','location','facility','benefit','contact'];
  const links=[...document.querySelectorAll('.nav-link')];
- const narrow=window.matchMedia('(max-width: 900px)');
- function activate(id) {
-   links.forEach(link=>{const active=link.dataset.section===id;link.classList.toggle('is-current',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+ links.forEach(link=>{link.dataset.section=link.getAttribute('href').slice(1)});
+ function updateActive(){
+   const offset=document.getElementById('navbar').getBoundingClientRect().height+(matchMedia('(max-width:900px)').matches?60:20);
+   let current='';ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=offset+12)current=id});
+   links.forEach(link=>{const active=link.dataset.section===current;link.classList.toggle('is-current',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')});
+   if(matchMedia('(max-width:900px)').matches){const active=document.querySelector('.nav-link.is-current');if(active){const nav=active.parentElement;const left=active.offsetLeft;if(left<nav.scrollLeft||left+active.offsetWidth>nav.scrollLeft+nav.clientWidth)nav.scrollTo({left:left-nav.clientWidth/2+active.offsetWidth/2,behavior:'smooth'})}}
  }
- function updateLinks() {
-   document.querySelectorAll('a[href^="#"]').forEach(a=>{const id=a.dataset.originalSection || a.getAttribute('href').slice(1); if(!ids.includes(id)&&id!=='hero')return; a.dataset.originalSection=id; if(a.classList.contains('nav-link'))a.dataset.section=id; a.href=narrow.matches?'#'+id:(id==='hero'?'./':'?page='+id);});
-   document.querySelectorAll('a[data-original-section]').forEach(a=>{const id=a.dataset.originalSection;a.href=narrow.matches?'#'+id:(id==='hero'?'./':'?page='+id)});
-   updateActive();
- }
- function updateActive() {
-   if(!narrow.matches){activate(document.documentElement.dataset.page);return}
-   let current=''; const threshold=130;
-   ids.forEach(id=>{const el=document.getElementById(id);if(el && el.getBoundingClientRect().top<=threshold)current=id});
-   activate(current);
-   const active=document.querySelector('.nav-link.is-current');
-   if(active){const nav=active.parentElement; const left=active.offsetLeft; if(left<nav.scrollLeft || left+active.offsetWidth>nav.scrollLeft+nav.clientWidth)nav.scrollTo({left:left-nav.clientWidth/2+active.offsetWidth/2,behavior:'smooth'});}
- }
- window.addEventListener('scroll',updateActive,{passive:true});
- narrow.addEventListener('change',updateLinks);
- updateLinks();
- if(narrow.matches && ids.includes(document.documentElement.dataset.page) && !location.hash) requestAnimationFrame(()=>document.getElementById(document.documentElement.dataset.page).scrollIntoView());
+ addEventListener('scroll',updateActive,{passive:true});addEventListener('resize',updateActive);updateActive();
+ const page=new URLSearchParams(location.search).get('page');if(ids.includes(page)&&!location.hash)requestAnimationFrame(()=>document.getElementById(page).scrollIntoView());
 })();
 </script>
 </body>
