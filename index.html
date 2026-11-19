@@ -2617,6 +2617,10 @@
 </style>
 <style>body > section[id]{scroll-margin-top:90px}@media(max-width:900px){body > section[id]{scroll-margin-top:118px}}</style>
 <style>.hero-right-notice .notice-law-box .notice-law-prefix{font-weight:700}</style>
+<style>
+.call-dialog{position:fixed;inset:0;margin:auto;text-align:center;border:0;border-radius:8px;padding:28px 32px;max-width:calc(100vw - 40px);color:#183e35;box-shadow:0 20px 60px #0005;background:white}
+.call-dialog::backdrop{background:#0008}.call-dialog h2{margin:0 0 12px;font-size:19px;color:#183e35}.call-dialog p{margin:0 0 22px;font-size:26px;font-weight:700}.call-dialog button{padding:9px 20px;border:0;background:#183e35;color:white;cursor:pointer}
+</style>
 </head>
 <body>
 
@@ -3605,5 +3609,6 @@
  const page=new URLSearchParams(location.search).get('page');if(ids.includes(page)&&!location.hash)requestAnimationFrame(()=>document.getElementById(page).scrollIntoView());
 })();
 </script>
+<dialog class="call-dialog" aria-labelledby="call-dialog-title"><h2 id="call-dialog-title">전화 상담 안내</h2><p>010-4870-0646</p><button type="button" id="call-dialog-close">닫기</button></dialog><script>(function(){const dialog=document.querySelector('.call-dialog');document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',e=>{if(window.matchMedia('(min-width:901px)').matches){e.preventDefault();dialog.showModal()}}));document.querySelector('#call-dialog-close').addEventListener('click',()=>dialog.close())})();</script>
 </body>
 </html>
